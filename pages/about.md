@@ -63,7 +63,7 @@ permalink: /pages/about.html
 	<table class="table table-striped">
 		<tr>
 			<td>姓  名：</td>    
-			<td>陶哓然</td>
+			<td>詹禹震</td>
 		</tr>
 		<tr>
 			<td>学  历：</td>    
@@ -71,15 +71,15 @@ permalink: /pages/about.html
 		</tr>
 		<tr>
 			<td>学  校：</td>    
-			<td>XMU</td>
+			<td>华南理工大学</td>
 		</tr>
 		<tr>
 			<td>专  业：</td>    
-			<td>计算机科学与技术</td>
+			<td>电子与通信工程</td>
 		</tr>
 		<tr>
 			<td>时  间：</td>    
-			<td>2014年入学至今</td>
+			<td>2010年入学至今</td>
 		</tr>
 	</table>
 
@@ -92,7 +92,7 @@ permalink: /pages/about.html
 				Email：
 			</td>  
 			<td>
-				<A href="mailto:initialran@gmail.com ">initialran@gmail.com</A>			
+				<A href="mailto:624501030@@qq.com ">624501030@qq.com</A>			
 			</td>
 		</tr>
 
@@ -101,7 +101,7 @@ permalink: /pages/about.html
 				github：
 			</td>  
 			<td>
-				<a href="{{ site.author.github }}" target="_blank">github.com/lemonjing</a>
+				<a href="{{ site.author.github }}" target="_blank">github.com/yzzhan</a>
 			</td>  
 		</tr>
 
@@ -110,18 +110,10 @@ permalink: /pages/about.html
 				微博：
 			</td> 
 			<td>
-				<a href="{{ site.author.weibo }}" target="_blank">_NoThankYou</a>
+				<a href="{{ site.author.weibo }}" target="_blank">zyz空格</a>
 			</td> 
 		</tr>
 
-		<tr>
-			<td>
-				知乎：
-			</td> 
-			<td>
-				<a href="{{ site.author.zhihu }}" target="_blank">陶哓然</a>
-			</td> 
-		</tr>
 	</table>
 
 
@@ -130,7 +122,7 @@ permalink: /pages/about.html
 	<hr>
 	<br>
 	<p>
-	在校学生，爱coding，爱生活。目前在网易实习。
+	在校学生，爱coding，爱生活。目前在百度实习。
 	</p>
 	<br>
 
