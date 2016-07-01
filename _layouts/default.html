@@ -11,7 +11,7 @@
    	<div class="container">	
    		<div class="row">  		
    		
-			<div class="col-md-2 col-lg-2 hidden-xs hidden-sm aside1 fadein-left">
+			<div class="col-md-3 col-lg-3 hidden-xs hidden-sm aside1 fadein-left">
 				<div class="profile box-shadow center">
 					<div class="overlay"></div>
 					<div class="center gavatar">
@@ -24,16 +24,7 @@
 						{{ site.profile_desc }}
 					</div>
 				</div>
-				<div class="tag-cloud ">	
-					<hr>
-					<div class="page-tag">
-							{% for tag in site.tags %}
-								{% if tag[1].size > 3 %}
-								<a href="http://yzzhan.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
-								{% endif %}
-							{% endfor %}
-					</div>					
-				</div>
+
 				<div class="clear"></div>
 				<div class="recentcome box-shadow">
 	 				<p>最近访客 <i class="fa fa-user"></i></p>
