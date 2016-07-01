@@ -4,8 +4,10 @@
   {% include head.html %}
 
   <body>
-  	
-  <div class="content">
+
+    {% include header.html %}
+      
+    <div class="content">
    	<div class="container">	
    		<div class="row">  		
    		
@@ -16,7 +18,7 @@
 						<a href="/" class="profile_gavatar"><img class="circle" src="{{ site.gavatar }}"></a>
 					</div>
 					<div class="address">
-						<h5><span class="fa fa-map-marker"></span> Xiamen Fujian, China</h5>
+						<h5><span class="fa fa-map-marker"></span> GuangZhou GuangDong, China</h5>
 					</div>
 					<div class="center profile_desc">
 						{{ site.profile_desc }}
@@ -24,20 +26,46 @@
 				</div>
 				
 				<div class="tag-cloud-text">
-					<a href="http://lemonjing.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签【点我】</p></a>
+					<a href="http://yzzhan.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签【点我】</p></a>
 				</div>
 				<div class="tag-cloud ">	
 					<hr>
 					<div class="page-tag">
 							{% for tag in site.tags %}
 								{% if tag[1].size > 3 %}
-								<a href="http://yzzhan.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
+								<a href="http://lemonjing.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
 								{% endif %}
 							{% endfor %}
 					</div>					
+				</div>
+				<div class="clear"></div>
+				<div class="recentcome box-shadow">
+	 				<p>最近访客 <i class="fa fa-user"></i></p>
+	 				<ul class="ds-recent-visitors" data-num-items="25"></ul>
+	 			</div>
 
+
+	 	
+	 		
 				
-			
+				<div class="friendlink">
+	 					<p>友情链接</p>
+	 					<hr>					
+		 				<a href = "https://imjad.cn/">AD's Blog</a></br>
+						<a href = "http://zyl.me">ZYL的博客</a></br>
+						<a href = "http://mxwu.cn">梦忻屋</a></br>
+						<a href = "http://www.weiyanweiyu.cn">微言微语</a></br>
+						<a href = "http://jloong.com">楚书业</a></br>
+						<a href = "https://hto.io">蔓舞寻樱</a></br>
+						<a href = "http://www.xiaokang.info">小康博客</a><br>
+						<a href = "http://blog.iov.me">随心说</a></br>
+						<a href = "http://czduban.com">以歌。先生</a><br>
+						<a href = "http://5mx.net/">冷夜博客</a><br>
+						<a href = "http://www.8hao.com.cn/">艳莜日记</a><br>
+						<a href = "http://blog.sunxyz.cn/">诸葛扬阳</a><br>
+						<a href = "https://lostyou.love/">邻居</a><br>
+						<a href = "http://www.kurodown.com/">酷绒站</a>
+	 			</div>
 				
 			</div>
 			
@@ -66,8 +94,6 @@
     
     {% include footer.html %}
 
-    {% include header.html %}
-	
   </body>
 
 </html>
