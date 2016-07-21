@@ -47,6 +47,7 @@ iOS中的事件主要分为三种：
   如下这么一个UI布局,一种有 ABCDE 五个视图
 
   假设用户触摸了上图的 View E 区域，那么 iOS 将会按下面的顺序反复检测 subview 来寻找 Hit-Test View
+  
   ![](http://7xw5tm.com1.z0.glb.clouddn.com/ABCDE.png)
 
   - 触摸区域在视图 A 内，所以检测视图 A 的 subview B 和 C；
