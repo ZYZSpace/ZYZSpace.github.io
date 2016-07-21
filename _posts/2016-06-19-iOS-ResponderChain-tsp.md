@@ -31,6 +31,7 @@ iOS中的事件主要分为三种：
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 ```
+
 ## 事件的传递
 
 - 当我们点击iOS设备屏幕的时候，UIKit就会生成一个事件对象UIEvent，然后会把这个Event分发给当前active的App。系统会将该事件加入到一个由UIApplication管理的事件队列中
