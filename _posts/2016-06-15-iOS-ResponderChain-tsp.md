@@ -9,6 +9,7 @@ date: 2016-06-19 20:47:16
 ## iOS中事件的类型
 
 iOS中的事件主要分为三种：
+
 - 触摸事件（Milti-Touch Events）：单点、多点触控以及各种手势操作
 - 加速事件（Motion Events）：重力、加速度传感器等
 - 远程控制事件（Remote Control Events）：远程遥控iOS设备多媒体播放等
@@ -22,7 +23,7 @@ iOS中的事件主要分为三种：
 - UIApplication、UIViewController、UIView都继承自UIResponder，因此它们都是响应者对象，都能够接收并处理事件。
 - UIResponder 声明了用于处理事件的接口，并定义了默认的行为。
 
-```objective-c
+  ```objective-c
 //UIResponder内部提供了以下方法来处理事件触摸事件
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -42,7 +43,7 @@ iOS中的事件主要分为三种：
   如下这么一个UI布局,一种有 ABCDE 五个视图
 
   假设用户触摸了上图的 View E 区域，那么 iOS 将会按下面的顺序反复检测 subview 来寻找 Hit-Test View
-![](http://7xw5tm.com1.z0.glb.clouddn.com/ABCDE.png)
+  ![](http://7xw5tm.com1.z0.glb.clouddn.com/ABCDE.png)
 
   - 触摸区域在视图 A 内，所以检测视图 A 的 subview B 和 C；
   - 触摸区域不在视图 B 内，但是在视图 C 内，所以检查视图 C 的 subview D 和 E；
@@ -53,7 +54,7 @@ iOS中的事件主要分为三种：
   iOS中使用Hit-Testing方法来找出这个触摸点下面的View，Hit-Testing会检测这个点击的点是不是发生在这个View的边界里面，如果是的话，就会去遍历这个View的subviews，直到找到最小的能够处理事件的view，如果整了一圈没找到能够处理的view，则返回自身。
 
   **用代码实现的大致思路如下**
-```objective-c
+  ```objective-c
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     // 1.判断当前控件能否接收事件
@@ -77,7 +78,7 @@ iOS中的事件主要分为三种：
 }
 ```
 
-##参考文章
+## 参考文章
 
 [Event Handling Guide for iOS](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html)
 
