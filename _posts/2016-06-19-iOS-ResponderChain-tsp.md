@@ -23,7 +23,7 @@ iOS中的事件主要分为三种：
 - UIApplication、UIViewController、UIView都继承自UIResponder，因此它们都是响应者对象，都能够接收并处理事件。
 - UIResponder 声明了用于处理事件的接口，并定义了默认的行为。
 
-  ```objective-c
+```objective-c
 //UIResponder内部提供了以下方法来处理事件触摸事件
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -55,7 +55,7 @@ iOS中的事件主要分为三种：
 
   **用代码实现的大致思路如下**
   
-  ```objective-c
+```objective-c
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     // 1.判断当前控件能否接收事件
