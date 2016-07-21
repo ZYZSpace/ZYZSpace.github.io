@@ -54,6 +54,7 @@ iOS中的事件主要分为三种：
   iOS中使用Hit-Testing方法来找出这个触摸点下面的View，Hit-Testing会检测这个点击的点是不是发生在这个View的边界里面，如果是的话，就会去遍历这个View的subviews，直到找到最小的能够处理事件的view，如果整了一圈没找到能够处理的view，则返回自身。
 
   **用代码实现的大致思路如下**
+  
   ```objective-c
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
