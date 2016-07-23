@@ -37,7 +37,8 @@ iOS中的事件主要分为三种：
 - 当我们点击iOS设备屏幕的时候，UIKit就会生成一个事件对象UIEvent，然后会把这个Event分发给当前active的App。系统会将该事件加入到一个由UIApplication管理的事件队列中
 - UIApplication会从事件队列中取出最前面的事件，并将事件分发下去以便处理，通常，先发送事件给应用程序的主窗口
 - 主窗口会在视图层次结构中找到一个最合适的视图来处理触摸事件
-   **如何找到最合适的控件来处理事件？**
+
+  **如何找到最合适的控件来处理事件？**
 
    - 自己是否能接收触摸事件
    - 触摸点是否在自己身上
@@ -85,7 +86,20 @@ iOS中的事件主要分为三种：
 }
 ```
 
+## 响应者链
+
+响应者链，就是由一系列相互关联的响应者组成的链条。从firstResponder开始，到UIApplication结束。当一个事件发生后，找到最合适处理的视图，该视图就是firstResponder，如果自己不重写该响应者对事件的处理方法，那么该事件会被默认传递给nextResponder。依次传递，如果传递到UIApplication对象都没有进行处理，就会被抛弃。
+
+## 下一个响应者
+- 如果该视图是控制器的视图,那么控制器是下一响应者
+- 否则，下一响应者是该视图的父视图
+- 控制器的下一响应者是控制器视图的父视图
+
+整个传递过程，官方文档给出了一张形象的图
+![](http://7xw5tm.com1.z0.glb.clouddn.com/iOS_responder_chain_2x.png)
+
 ## 参考文章
 
 [Event Handling Guide for iOS](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html)
+[史上最详细的iOS之事件的传递和响应机制](http://www.jianshu.com/p/2e074db792ba)
 
