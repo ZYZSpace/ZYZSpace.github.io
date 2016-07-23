@@ -101,5 +101,6 @@ iOS中的事件主要分为三种：
 ## 参考文章
 
 [Event Handling Guide for iOS](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html)
+
 [史上最详细的iOS之事件的传递和响应机制](http://www.jianshu.com/p/2e074db792ba)
 
