@@ -153,6 +153,7 @@ _timer = [NSTimer scheduledTimerWithTimeInterval:0.5 block:^{
 
 ## 参考资料
 [正确使用Block避免Cycle Retain和Crash](http://tanqisen.github.io/blog/2013/04/19/gcd-block-cycle-retain/)
+
 [用Block解决NSTimer循环引用](http://www.jianshu.com/p/1dbd7a228a22)
 
 
