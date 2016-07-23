@@ -84,6 +84,7 @@ iOS中容易产生循环引用的地方有以下三种：
 
 ## block引起的循环引用
 block会对block内部用到的对象进行强引用,因此对block使用的不当也会引起循环引用
+
 ```objective-c
 @property (nonatomic, copy) void(^myBlock)(void);
 
@@ -91,6 +92,7 @@ self.myBlock = ^ {
   NSLog(@"%@", self.name);
 };
 ```
+
 在该例子中，由于self持有block，block对内部用到的对象进行了强引用，因此block也持有了self，形成了循环引用。
 
 **解决办法**
