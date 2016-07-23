@@ -110,7 +110,50 @@ self.myBlock = ^ {
 但是block里面为什么又要使用强引用呢？
 这是因为防止在多线程环境下，self被其他线程释放，从而导致的程序出错。
 
+## NSTimer引起的循环引用
+NSTimer会retain它的target，这样如果在控制器的一个属性是NSTimer的target指定为self，则会引起循环引用。
 
+**解决办法**
+为NSTimer添加一个Category方法
+
+```
+#import <Foundation/Foundation.h>
+@interface NSTimer (BlockSupport)
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval block:(void(^)())block repeats:(BOOL)repeats;
+@end
+#import "NSTimer+BlockSupport.h"
+@implementation NSTimer (BlockSupport)
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval block:(void(^)())block repeats:(BOOL)repeats { 
+return [self scheduledTimerWithTimeInterval:interval target:self selector:@selector(blockInvoke:) userInfo:[block copy] repeats:repeats];
+}
+
++ (void)blockInvoke:(NSTimer *)timer { 
+  void (^block)() = timer.userInfo; 
+  if (block) { 
+    block(); 
+  }
+}
+@end
+```
+
+
+这个分类支持使用Block创建NSTimer，把操作传递到了万能对象userInfo里面，之后在控制器当中以这样的方式创建：
+
+```
+__block typeof(self) weakSelf = self;
+_timer = [NSTimer scheduledTimerWithTimeInterval:0.5 block:^{ 
+  __block typeof(self) strongSelf = weakSelf;
+  [strongSelf doSth];
+} repeats:YES];
+```
+
+先定义了一个弱引用，令其指向self，然后使块捕获这个引用，而不直接去捕获普通的self变量。也就是说，self不会为计时器所保留。当块开始执行时，立刻生成strong引用，以保证实例在执行期间持续存活。
+
+
+## 参考资料
+[正确使用Block避免Cycle Retain和Crash](http://tanqisen.github.io/blog/2013/04/19/gcd-block-cycle-retain/)
+[用Block解决NSTimer循环引用](http://www.jianshu.com/p/1dbd7a228a22)
 
 
 
