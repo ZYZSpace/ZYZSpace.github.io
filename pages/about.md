@@ -71,19 +71,10 @@ permalink: /pages/about.html
 	<hr>
 	<br>
 	<p>
-	在校学生，爱coding，爱生活。目前在百度实习。
+	iOS初学者一枚，目前在百度实习
 	</p>
 	<br>
 
-	<h3><i class="fa fa-heart"></i>&nbsp;人生理想</h3>
-	<hr>
-	<br>
-	<p>
-		...		
-	</p>
-	<br>
-	<br> 
-	<br>
 
 </div>
 
