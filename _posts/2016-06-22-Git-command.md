@@ -47,11 +47,11 @@ rm b.txt 接下来：直接commit或者git checkout – filename撤销
 
 ## 远程仓库
 
-创建SSHKey ssh-keygen -t rsa –C “932191671@qq.com”
+创建SSHKey ssh-keygen -t rsa –C “624501030@qq.com”
 
 1.创建远程库
 
-git remote add origin https://github.com/lemongjing/testgit.git
+git remote add origin https://github.com/XXX/XXX.git
 把本地master分支的最新修改推送到
 
 github上 git push -u origin master
@@ -74,6 +74,7 @@ git branch dev + git checkout dev = git checkout -b dev 创建并切换到dev
 ```
 git branch -d dev
 ```
+
 总结
 
 ```
@@ -92,6 +93,7 @@ Git用
 ```
 <<<<<<<,=======,>>>>>>>
 ```
+
 标记出不同分支的内容，其中«<HEAD是指主分支修改的内容，»»>fenzhi是指fenzhi上修改的内容，我们可以修改下如下后保存。
 
 2.分支管理策略
@@ -108,13 +110,17 @@ Git用
 ```
 
 禁用fast-forward模式
+
 ```
 git merge –-no-ff -m "注释" dev
 ```
+
 查看分支日志
+
 ```
 git log --graph --pretty=oneline --abbrev-commit
 ```
+
 工作现场
 
 暂存工作现场git stash
@@ -130,6 +136,7 @@ git log --graph --pretty=oneline --abbrev-commit
 多人协作
 
 创建本地分支与远程分支的链接
+
 ```
 git branch –set-upstream-to=origin/ dev
 ```
@@ -146,11 +153,13 @@ git branch --set-upstream dev origin/dev
 删除本地分支：git branch -d name
 
 例，删除了本地dev
+
 ```
 * master
   remotes/origin/dev
   remotes/origin/master
 ```
+
 删除远程分支（两种方法）
 
 git push –delete origin dev
